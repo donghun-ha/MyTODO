@@ -1,4 +1,4 @@
-# todo_app
+# MyTODO
 Flutter Task Management App
 
 이 Flutter 애플리케이션은 간단하면서도 효과적인 작업 관리 도구를 제공합니다. 사용자는 작업을 생성하고, 이 작업을 다양한 시간 간격으로 알림을 받을 수 있도록 설정할 수 있습니다. 
@@ -30,3 +30,5 @@ Flutter Task Management App
 	•	path: ^1.9.0
 	•	Flutter Staggered Animations: 리스트 뷰에서 애니메이션 효과를 제공합니다.
 	•	flutter_staggered_animations: ^1.1.1
+
+https://youtu.be/iErWG7Uz2GM
