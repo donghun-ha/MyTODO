@@ -1,95 +1,84 @@
-# 📌 MyTODO
+📌 MyTODO
 
-> Flutter로 개발한 직관적이고 가벼운 할 일 관리 앱입니다.
-> SQLite를 활용한 로컬 데이터베이스 기반으로 언제 어디서나 빠르게 할 일을 기록하고 정리할 수 있습니다.
+Flutter로 개발한 직관적이고 가벼운 할 일 관리 앱입니다. SQLite를 활용한 로컬 데이터베이스 기반으로 언제 어디서나 빠르게 할 일을 기록하고 정리할 수 있습니다.
 
----
+⸻
 
-## 🔧 기술 스택
+🔧 기술 스택
 
-| 구분                   | 사용 기술          |
-| -------------------- | -------------- |
-| **Frontend**         | Flutter, Dart  |
-| **State Management** | GetX           |
-| **Database**         | SQLite         |
-| **Tools**            | VSCode, GitHub |
+구분	사용 기술
+Frontend	Flutter, Dart
+State Management	GetX
+Database	SQLite
+Tools	VSCode, GitHub
 
----
 
-## 🧑‍💻 담당 역할
+⸻
 
-> **기획, 디자인, 개발 전체 100% 개인 구현**
+🧑‍💻 담당 역할
 
-* 할 일 등록/수정/삭제 UI 구현 및 상태관리
-* GetX를 통한 상태 관리 및 화면 갱신
-* SQLite를 통한 데이터 저장 및 조회
-* 태그 색상, 반복, 완료 체크 기능 구현
-* 마이페이지 UI 구현 및 구조 설계
+기획, 디자인, 개발 전체 100% 개인 구현
 
----
+	•	할 일 등록/수정/삭제 UI 구현 및 상태관리
+	•	GetX를 통한 상태 관리 및 화면 갱신
+	•	SQLite를 통한 데이터 저장 및 조회
+	•	태그 색상, 반복, 완료 체크 기능 구현
+	•	마이페이지 UI 구현 및 구조 설계
 
-## ✨ 주요 기능 요약
+⸻
 
-| 기능        | 설명                      |
-| --------- | ----------------------- |
-| 할 일 등록    | 제목, 내용, 날짜, 시간 등 입력 가능  |
-| 할 일 반복 설정 | 일/주/월 반복 설정 기능          |
-| 태그 색상 지정  | 색상 선택으로 우선순위 구분 가능      |
-| 완료 여부 체크  | 완료 여부 표시 및 필터링 가능       |
-| 마이페이지     | 사용자 통계, 설정 등 제공 (차트 제외) |
+✨ 주요 기능 요약
 
----
+기능	설명
+할 일 등록	제목, 내용, 날짜, 시간 등 입력 가능
+할 일 반복 설정	일/주/월 반복 설정 기능
+태그 색상 지정	색상 선택으로 우선순위 구분 가능
+완료 여부 체크	완료 여부 표시 및 필터링 가능
+마이페이지	사용자 통계, 설정 등 제공 (차트 제외)
 
-## 🎨 UI 미리보기
 
-> 추후 아래 파일 경로에 이미지 혹은 GIF 추가 예정
+⸻
 
-| 화면     | 미리보기                            |
-| ------ | ------------------------------- |
-| 메인     | ![](./assets/mytodo_main.gif)   |
-| 할 일 등록 | ![](./assets/mytodo_add.gif)    |
-| 마이페이지  | ![](./assets/mytodo_mypage.gif) |
+🎬 데모 영상
 
-▶️ [시연 영상 보러가기 (YouTube)](https://youtu.be/iErWG7Uz2GM)
+▶️ 시연 영상 보러가기 (YouTube)
 
----
+⸻
 
-## 🗂 데이터 모델 (ERD)
+🗂 데이터 모델 (ERD)
 
-| 컬럼명         | 타입         | 설명                                |
-| ----------- | ---------- | --------------------------------- |
-| id          | INTEGER PK | 고유 식별자                            |
-| title       | TEXT       | 할 일 제목                            |
-| note        | TEXT       | 상세 내용                             |
-| date        | TEXT       | 날짜 (yyyy-mm-dd)                   |
-| startTime   | TEXT       | 시작 시간                             |
-| endTime     | TEXT       | 종료 시간                             |
-| remind      | INTEGER    | 알림 설정 (분 단위)                      |
-| repeat      | TEXT       | 반복 설정 (None/Daily/Weekly/Monthly) |
-| color       | INTEGER    | 태그 색상 구분                          |
-| isCompleted | INTEGER    | 완료 여부 (0/1)                       |
+컬럼명	타입	설명
+id	INTEGER PK	고유 식별자
+title	TEXT	할 일 제목
+note	TEXT	상세 내용
+date	TEXT	날짜 (yyyy-mm-dd)
+startTime	TEXT	시작 시간
+endTime	TEXT	종료 시간
+remind	INTEGER	알림 설정 (분 단위)
+repeat	TEXT	반복 설정 (None/Daily/Weekly/Monthly)
+color	INTEGER	태그 색상 구분
+isCompleted	INTEGER	완료 여부 (0/1)
 
----
 
-## ⚠️ 트러블슈팅
+⸻
 
-### 1. 알림 기능 미구현
+⚠️ 트러블슈팅
 
-* **문제**: Flutter에서 알림 기능을 구현하려 했지만 `flutter_local_notifications`의 백그라운드 처리 문제로 반복 알림이 정상 작동하지 않음
-* **시도**: iOS/Android 권한 설정, 다양한 예제 테스트 진행
-* **결과**: 프로젝트 일정상 제외 결정 → 기능은 UI상 표시되지만 실제 동작은 제외됨
-* **향후 계획**: `android_alarm_manager_plus`를 조합해 추후 알림 기능 도전 예정
+1. 알림 기능 미구현
+	•	문제: Flutter에서 알림 기능을 구현하려 했지만 flutter_local_notifications의 백그라운드 처리 문제로 반복 알림이 정상 작동하지 않음
+	•	시도: iOS/Android 권한 설정, 다양한 예제 테스트 진행
+	•	결과: 프로젝트 일정상 제외 결정 → 기능은 UI상 표시되지만 실제 동작은 제외됨
+	•	향후 계획: android_alarm_manager_plus를 조합해 추후 알림 기능 도전 예정
 
----
+⸻
 
-## ✏️ 느낀 점
+✏️ 느낀 점
+	•	상태관리 구조를 스스로 설계하고 적용한 첫 프로젝트로, 데이터 흐름과 구조의 중요성을 실감했습니다.
+	•	SQLite를 통해 로컬 앱 구조와 DB 스키마 설계를 학습했으며, Flutter에서의 CRUD 처리 흐름을 익힐 수 있었습니다.
+	•	UI/UX를 혼자 구성하면서 사용자 관점에서 기능을 배치하는 감각을 기를 수 있었습니다.
 
-* 상태관리 구조를 스스로 설계하고 적용한 첫 프로젝트로, 데이터 흐름과 구조의 중요성을 실감했습니다.
-* SQLite를 통해 로컬 앱 구조와 DB 스키마 설계를 학습했으며, Flutter에서의 CRUD 처리 흐름을 익힐 수 있었습니다.
-* UI/UX를 혼자 구성하면서 사용자 관점에서 기능을 배치하는 감각을 기를 수 있었습니다.
+⸻
 
----
+🔗 GitHub 링크
 
-## 🔗 GitHub 링크
-
-👉 [GitHub Repository 바로가기](https://github.com/donghun-ha/MyTODO)
+👉 GitHub Repository 바로가기
