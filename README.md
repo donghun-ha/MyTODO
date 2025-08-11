@@ -60,7 +60,18 @@ Flutter ↔ **SQLite(로컬)**
 ---
 
 ## 🗂 데이터 모델 (ERD)
-- **todos**: `id`, `title`, `note`, `date(yyyy-mm-dd)`, `startTime`, `endTime`, `remind(minutes)`, `repeat(None/Daily/Weekly/Monthly)`, `color`, `isCompleted(0/1)`
+| 컬럼명         | 타입         | 설명                                  |
+| ------------- | ------------ | ------------------------------------- |
+| id            | INTEGER PK   | 고유 식별자                            |
+| title         | TEXT         | 할 일 제목                              |
+| note          | TEXT         | 상세 내용                               |
+| date          | TEXT         | 날짜 (yyyy-mm-dd)                      |
+| startTime     | TEXT         | 시작 시간                               |
+| endTime       | TEXT         | 종료 시간                               |
+| remind        | INTEGER      | 알림 설정 (분 단위)                      |
+| repeat        | TEXT         | 반복 설정 (None/Daily/Weekly/Monthly)  |
+| color         | INTEGER      | 태그 색상 구분                          |
+| isCompleted   | INTEGER      | 완료 여부 (0/1)                         |
 
 ---
 
